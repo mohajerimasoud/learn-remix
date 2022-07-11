@@ -1,20 +1,27 @@
-import React, { useEffect } from "react";
+import type { LinksFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+
+import stylesUrl from "~/styles/index.css";
+
+export const links: LinksFunction = () => {
+  return [{ rel: "stylesheet", href: stylesUrl }];
+};
 
 export default function IndexRoute() {
-  useEffect(() => {
-    console.log("index.tsx");
-  }, []);
-
   return (
-    <div>
-      Hello Index Route
-      <button
-        onClick={() => {
-          console.log("click");
-        }}
-      >
-        log
-      </button>
+    <div className="container">
+      <div className="content">
+        <h1>
+          Remix <span>Jokes!</span>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="jokes">Read Jokes</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 }
