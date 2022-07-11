@@ -8,7 +8,7 @@ export default function App() {
         <title>Remix: So great, it's funny!</title>
       </head>
       <body>
-        Hello world
+        <h2> Hello world</h2>
         <LiveReload />
       </body>
     </html>
